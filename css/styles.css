@@ -27,6 +27,7 @@ html {
   --border-color-header: #ececec;
   --border--color-portfolio: #eeeeee;
   --border--color--clients: #afb1b8;
+  --icon-color: #afb1b8;
 }
 body {
   background-color: var(--primary-bg-color);
@@ -116,7 +117,8 @@ header {
 fill: var(--primery-text-color);
 margin-right: 10px;
 }
-.site-adress .link:hover .icon {
+.site-adress .link:hover .icon,
+.site-adress .link:focus .icon {
 fill:var(--accent-color);
 }
 
@@ -202,10 +204,10 @@ fill:var(--accent-color);
   align-items: center;
   text-align: center;
   letter-spacing: 0.06em;
-  background-color: var(--primary-bg-color);
+  background-color: var(--accent-color);
 }
 .text-button {
-  color: black;
+  color: var(--primary-bg-color);
 }
 .pointer:hover,
 .pointer:focus {
@@ -223,11 +225,14 @@ fill:var(--accent-color);
 /*преймущества компании*/
 .advantag {
   display: flex;
-  justify-content: center;
+  
 }
 .point {
   width: 270px;
-  margin: 0 auto;
+  
+}
+.point:not(:last-child) {
+    margin-right: 30px;
 }
 .point::before {
   display: block;
@@ -256,14 +261,15 @@ fill:var(--accent-color);
   color: var(--title-text-color);
 }
 .advantages {
+  margin-top: 30px;
   margin-bottom: 10px;
-
   font-weight: 700;
   font-size: 14px;
   line-height: 16px;
   text-transform: uppercase;
 }
 .advantages-list {
+  margin-top: 0;
   margin-bottom: 0;
   font-size: 14px;
   line-height: 1.71;
@@ -322,7 +328,12 @@ fill:var(--accent-color);
   width: 270px;
   height: auto;
   margin-right: 30px;
-  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+
+  
 }
 .members:nth-child(4n) {
   margin-right: 0;
@@ -355,6 +366,7 @@ fill:var(--accent-color);
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 30px;
   
 }
 /*Оформление соц сетей*/
@@ -371,13 +383,14 @@ fill:var(--accent-color);
   
 }
 .ins {
-  fill: var(--primery-text-color);
+  fill: var(--icon-color);
 }
 .set:hover,
 .set:focus {
   background-color: var(--accent-color);
 }
-.set:hover .ins {
+.set:hover .ins,
+.set:focus .ins {
   fill: var(--primary-bg-color);
 }
 .gap:not(:last-child) {
@@ -389,7 +402,8 @@ margin-right: 10px;
 .title-client{
   
   margin-top: 0;
-
+  margin-bottom: 50px;
+  
   color: var(--title-text-color);
   font-weight: 700;
   font-size: 36px;
@@ -406,22 +420,29 @@ margin-right: 10px;
 }
 .images-client {
   display: flex;
-  width: 1170px;
-  height: 92px;
-  border: 1px solid var(--border--color--clients);
-  justify-content: center;
-  align-items: center;
+  
+  border: 1px solid var(--icon-color);
+  border-radius: 4px;
+ 
 }
 .last {
-  fill: var(--primery-text-color);
+  display: flex;
+  width: 170px;
+  height: 92px;
+  justify-content: center;
+  align-items: center;
+  fill: var(--icon-color);
 }
-.images-client:hover,
-.images-client:focus {
+.images-client:hover {
   border: 1px solid var(--accent-color);
+  color: var(--accent-color)
 }
-.last:hover .ins {
+.last:hover .book,
+.last:focus .book {
   fill: var(--accent-color);
 }
+
+
 .images-client:not(:last-child) {
   margin-right: 30px;
 }
@@ -463,7 +484,11 @@ footer {
 .address {
   font-style: normal;
 }
+.google {
+  margin-bottom: 9px;
+}
 .map {
+  margin-bottom: 9px;
   font-size: 14px;
   line-height: 1.71;
   color: #fff;
@@ -473,7 +498,9 @@ footer {
 .footer a:focus {
   color: var(--accent-color);
 }
-
+.gmail {
+  margin-bottom: px;
+}
 .mail {
   margin-top: 9px;
   margin-bottom: 9px;
@@ -487,9 +514,9 @@ footer {
   color: var(--adress-color);
 }
 .roof {
-  margin-top: 10px;
+  margin-top: 12px;
   color: var(--primary-bg-color);
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   line-height: 1.14;
   
@@ -506,11 +533,12 @@ margin-right: 10px;
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background-color: var(--primery-text-color);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 .bench:hover,
 .bench:focus {
   background-color: var(--accent-color);
+  fill: var(--primary-bg-color);
 }
 .jump {
   
@@ -551,7 +579,10 @@ margin-right: 10px;
 .filter:focus {
   background-color: var(--accent-color);
   color: var(--primary-bg-color);
-  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.15);;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+    0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
 }
 .flex-container {
   display: flex;
@@ -574,8 +605,9 @@ margin-right: 10px;
 }
 .portfolio:hover {
   cursor: pointer;
-    box-shadow: 10px 10px 8px 2px rgba(0, 0, 0, 0.3);
-
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+     0px 4px 4px rgba(0, 0, 0, 0.06),
+     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .characteristic {
   border: 1px solid var(--border--color-portfolio);
