@@ -309,6 +309,7 @@ fill:var(--accent-color);
 /*оформление team*/
 .team {
   padding-bottom: 94px;
+  background-color: var(--primary-button-color);
 }
 .title-time {
   margin-bottom: 50px;
